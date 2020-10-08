@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Chi Siamo",
+        "url": "/chi-siamo"
+    },
+    {
+        "name": "Cosmesi",
+        "url": "/cosmesi"
+    },
+    {
+        "name": "Gastronomia",
+        "url": "/gastronomia"
+    },
+    {
+        "name": "Gallery",
+        "url": "/gallery"
+    },
+    {
+        "name": "Promozioni",
+        "url": "/promozioni"
+    },
+    {
+        "name": "Contatti",
+        "url": "/contatti"
+    }
+]
