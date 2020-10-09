@@ -1,8 +1,8 @@
 
 const ProductCard = ({ uid, imageUrl, title, price }) => {
     return (
-        <div className="p-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <div className="shadow-md p-4 text-center">
+        <div className="md:p-4 p-1">
+            <div className="shadow p-4 text-center">
                 <div 
                     className="bg-cover bg-center w-full h-48" 
                     style={{

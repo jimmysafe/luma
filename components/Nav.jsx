@@ -2,19 +2,16 @@ import nav from '../config/nav.json'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
-import { linkResolver } from '../prismic/prismic-configuration'
 
 const Nav = () => {
     const router = useRouter()
     const [open, setOpen] = useState(false)
-    console.log(nav)
     return (
         <nav className="shadow">
             <div className="container mx-auto flex justify-center items-center px-4">
                 <div className="flex-1">
                     <img className="w-24" src="/images/logo.jpg" alt="Logo" />
                 </div>
-                
                 <ul 
                     className={`
                         flex 
@@ -34,6 +31,7 @@ const Nav = () => {
                         transition-all
                         duration-500
                         ease-in-out
+                        z-50
                     `}
                     style={{
                         top: open ? 0 : '-100%'
@@ -42,7 +40,7 @@ const Nav = () => {
 
                     {nav.map((item, i) => (
                         <Link as={item.url} href="/[page]" key={i}>
-                            <li className="mx-3 uppercase cursor-pointer md:my-0 my-2">
+                            <li className="font-bold text-gray-600 mx-3 uppercase cursor-pointer md:my-0 my-2">
                                 <span>{item.name}</span>
                             </li>
                         </Link>

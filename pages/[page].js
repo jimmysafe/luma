@@ -1,31 +1,24 @@
 import { getSinglePage } from '../prismic/queries'
 import { useRouter } from 'next/router'
+import Slice from '../components/Slice'
 
 export default function Page({ page }) {
-
-    const router = useRouter()
-    if(!page && router.query !== 'blog') {
-        router.push('/404')
-        return null
-    }
 
     // console.log(page)
 
     return (
         <>
-        <p className="my-8 text-bold uppercase">{page.data.title[0].text}</p>
-      
-        {/* <Seo page={page} /> */}
-        {/* <div className="page-content">
-            {page.data.body.map((slice, i) => (
-                <Slice key={i} slice={slice} page={page}/>
-            ))}
-        </div> */}
+            {/* <Seo page={page} /> */}
+            <div className="page-content">
+                {page.data.body.map((slice, i) => (
+                    <Slice key={i} slice={slice} page={page}/>
+                ))}
+            </div>
         </>
     )
 }
 
-export async function getServerSideProps({ res, query }) {
+export async function getServerSideProps({ res, query, params }) {
     const page = await getSinglePage(query.page)
     if(!page && res) {
         res.writeHead(301, {

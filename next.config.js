@@ -1,3 +1,4 @@
+
 module.exports = {
     env: {
       PRISMIC_API_ENDPOINT: process.env.PRISMIC_API_ENDPOINT,

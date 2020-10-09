@@ -1,26 +1,29 @@
-import FooterCard from "../components/common/FooterCard"
-import ProductCard from "../components/common/ProductCard"
+import { getSinglePage } from '../prismic/queries'
+import Seo from '../components/Seo'
+import Slice from '../components/Slice'
 
-const Home = () => {
+const Home = ({ page }) => {
+
   return (
-    <div className="flex flex-wrap container mx-auto">
-      <ProductCard 
-        title="Afrodite viso anti age"
-        price={22}
-        imageUrl="https://www.euronatural.it/wp-content/uploads/2014/10/delicate-cleanser1.jpg"
-      />
-      <ProductCard 
-        title="Afrodite viso anti age"
-        price={22}
-        imageUrl="https://www.euronatural.it/wp-content/uploads/2014/10/delicate-cleanser1.jpg"
-      />
-      <ProductCard 
-        title="Afrodite viso anti age"
-        price={22}
-        imageUrl="https://www.euronatural.it/wp-content/uploads/2014/10/delicate-cleanser1.jpg"
-      />
-    </div>
+    <>
+        {/* <Seo page={page} />  */}
+        <div className="page-content">
+            {page.data.body.map((slice, i) => (
+                <Slice key={i} slice={slice} page={page}/>
+            ))}
+        </div>
+    </>
   )
 }
+
+export async function getServerSideProps({ res, query }) {
+  const page = await getSinglePage('homepage')
+  return {
+    props: {
+        page: page || null
+    }
+  }
+}
+
 
 export default Home

@@ -11,8 +11,15 @@ module.exports = {
         secondary: '#A5A22F',
         white: '#FFFFFF'
       },
+      fontSize: {
+        xxl: '3rem'
+      },
       backgroundImage: {
         wave: "url('/images/wave.svg')"
+      },
+      minHeight: {
+        banner: '50vh',
+        wave: '225px'
       }
     }
   },
