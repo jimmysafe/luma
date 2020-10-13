@@ -3,7 +3,7 @@ import Seo from '../components/Seo'
 import Slice from '../components/Slice'
 
 const Home = ({ page }) => {
-
+  console.log(page)
   return (
     <>
         {/* <Seo page={page} />  */}

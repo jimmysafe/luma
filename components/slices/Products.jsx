@@ -21,11 +21,13 @@ const Products = ({ slice, category }) => {
         loadProducts()
     }, [slice])
 
+    console.log(products)
+
     if(!products.length) return <p>Loading...</p>
 
     const renderList = () => {
         return (
-            <div className="container mx-auto flex flex-wrap py-10 md:px-40 px-4">
+            <div className="container mx-auto flex flex-wrap py-10 px-4">
                 {products.map(item => (
                     <ProductCard 
                         key={item.id}
@@ -42,7 +44,7 @@ const Products = ({ slice, category }) => {
     const renderSlider = () => {
 
           return (
-            <div className="container mx-auto md:px-40 px-0">
+            <div className="container mx-auto px-0">
                 
             <ItemsCarousel
                 requestToChangeActive={setActiveItemIndex}
@@ -52,7 +54,7 @@ const Products = ({ slice, category }) => {
                 leftChevron={<img src="/images/chevron-left.svg" alt=""/>}
                 rightChevron={<img src="/images/chevron-right.svg" alt=""/>}
                 outsideChevron={!isMobile}
-                chevronWidth={10}
+                chevronWidth={30}
             >
                 {products.map(item => (
                     <SliderCard 

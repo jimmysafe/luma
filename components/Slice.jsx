@@ -1,3 +1,4 @@
+import SectionTitle from "./slices/SectionTitle";
 import Gallery from "./slices/Gallery";
 import HeroBanner from "./slices/HeroBanner"
 import Products from "./slices/Products";
@@ -15,8 +16,12 @@ const Slice = (props) => {
                 return <Text {...props} />
             case 'prodotti_cosmetica':
                 return <Products {...props} category="prodotto_cosmetica" />
+            case 'prodotti_gastronomia':
+                return <Products {...props} category="prodotto_gastronomia" />
             case 'galleria_immagini':
                 return <Gallery {...props} />
+            case 'titolo_sezione':
+                return <SectionTitle {...props} />
             default:
                 return null
         }

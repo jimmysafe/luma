@@ -33,3 +33,12 @@ export const getSinglePage = async (uid) => {
     const page = await Client().getByUID("page", uid)
     return page
 }
+
+export const getSingleProduct = async (uid) => {
+  const gastronomicProduct = await Client().getByUID("prodotto_gastronomia", uid)
+  if(!gastronomicProduct){
+    const cosmeticProduct = await Client().getByUID("prodotto_cosmetica", uid)
+    return cosmeticProduct
+  } else return gastronomicProduct
+}
+

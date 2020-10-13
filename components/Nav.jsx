@@ -10,7 +10,9 @@ const Nav = () => {
         <nav className="shadow">
             <div className="container mx-auto flex justify-center items-center px-4">
                 <div className="flex-1">
-                    <img className="w-24" src="/images/logo.jpg" alt="Logo" />
+                    <Link as="/homepage" href="/[page]">
+                        <img className="w-24 cursor-pointer" src="/images/logo.jpg" alt="Logo" />
+                    </Link>
                 </div>
                 <ul 
                     className={`

@@ -1,5 +1,4 @@
 import { getSinglePage } from '../prismic/queries'
-import { useRouter } from 'next/router'
 import Slice from '../components/Slice'
 
 export default function Page({ page }) {
@@ -18,18 +17,18 @@ export default function Page({ page }) {
     )
 }
 
-export async function getServerSideProps({ res, query, params }) {
+export async function getServerSideProps({ res, query }) {
     const page = await getSinglePage(query.page)
-    if(!page && res) {
-        res.writeHead(301, {
-            Location: '/404'
-            });
-        res.end();
-        return {}
-    }
+    // if(!page && res) {
+    //     res.writeHead(301, {
+    //         Location: '/404'
+    //         });
+    //     res.end();
+    //     return {}
+    // }
     return {
       props: {
-          page: page || null
+          page
       }
     }
   }
