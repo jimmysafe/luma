@@ -1,4 +1,4 @@
-import FooterCard from '../components/common/FooterCard'
+import FooterCard from './common/FooterCard'
 import nav from '../config/nav.json'
 import Link from 'next/link'
 

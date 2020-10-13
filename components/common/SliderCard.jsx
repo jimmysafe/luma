@@ -3,7 +3,7 @@ import Link from 'next/link'
 const SliderCard = ({ uid, imageUrl, title, price }) => {
     return (
         <Link href={`/products/[product]`} as={`/products/${uid}`}>
-            <div className="md:p-4 p-1 h-full">
+            <div className="md:p-4 p-1 h-full cursor-pointer">
                 <div className="flex flex-col shadow p-4 text-center h-full">
                     <div 
                         className="bg-cover bg-center w-full h-48" 

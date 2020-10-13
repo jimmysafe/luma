@@ -1,7 +1,9 @@
+import Link from 'next/link'
 
 const ProductCard = ({ uid, imageUrl, title, price }) => {
     return (
-        <div className="p-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+        <Link href={`/products/[product]`} as={`/products/${uid}`}>
+        <div className="p-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 cursor-pointer">
             <div className="flex flex-col shadow-md p-4 text-center h-full">
                 <div 
                     className="bg-cover bg-center w-full h-48" 
@@ -18,6 +20,7 @@ const ProductCard = ({ uid, imageUrl, title, price }) => {
                 </div>
             </div>
         </div>
+        </Link>
     )
 }
 
