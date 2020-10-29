@@ -28,7 +28,7 @@ export async function getServerSideProps({ res, query }) {
     // }
     return {
       props: {
-          page
+          page: page || null
       }
     }
   }

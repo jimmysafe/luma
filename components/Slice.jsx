@@ -3,6 +3,7 @@ import Gallery from "./slices/Gallery";
 import HeroBanner from "./slices/HeroBanner"
 import Products from "./slices/Products";
 import Text from "./slices/Text";
+import ContactForm from "./slices/ContactForm";
 
 
 const Slice = (props) => {
@@ -22,6 +23,8 @@ const Slice = (props) => {
                 return <Gallery {...props} />
             case 'titolo_sezione':
                 return <SectionTitle {...props} />
+            case 'modulo_contatto':
+                return <ContactForm {...props} />
             default:
                 return null
         }

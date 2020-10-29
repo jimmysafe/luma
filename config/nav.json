@@ -16,10 +16,6 @@
         "url": "/gallery"
     },
     {
-        "name": "Promozioni",
-        "url": "/promozioni"
-    },
-    {
         "name": "Contatti",
         "url": "/contatti"
     }
