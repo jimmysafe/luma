@@ -42,7 +42,7 @@ const Nav = () => {
 
                     {nav.map((item, i) => (
                         <Link as={item.url} href="/[page]" key={i}>
-                            <li className="font-bold text-gray-600 mx-3 uppercase cursor-pointer md:my-0 my-2">
+                            <li className="font-bold text-gray-600 mx-3 uppercase cursor-pointer md:my-0 my-2" onClick={() => setOpen(!open)}>
                                 <span>{item.name}</span>
                             </li>
                         </Link>
