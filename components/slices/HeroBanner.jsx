@@ -1,7 +1,11 @@
+import { RichText } from 'prismic-reactjs'
+
 
 const HeroBanner = ({ slice }) => {
     
-    const { banner_text, image, button_link, button_text } = slice.primary
+    const { banner_text, image, button_link, button_text, motto } = slice.primary
+
+    console.log(slice.primary)
 
     return (
         <div 
@@ -12,6 +16,11 @@ const HeroBanner = ({ slice }) => {
                 <h1 className="text-white font-bold text-xxl">
                     {banner_text[0].text.toUpperCase()}
                 </h1>
+                {motto && motto.length > 0 &&
+                    <div className="text-white font-bold text-lg text-center">
+                        <RichText render={motto}/>
+                    </div>
+                }
             </div>
         </div> 
     )
