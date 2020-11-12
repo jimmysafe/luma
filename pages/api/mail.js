@@ -11,9 +11,9 @@ export default (req, res) => {
         })
         sgMail.setApiKey(process.env.SENDGRID_API_KEY);
         const msg = {
-            to: 'info@lumafarmbio.it',
+            to: 'marco.golini.vittorito@gmail.com',
             from: 'info@lumafarmbio.it',
-            subject: 'Richiesta di contatto - Lumafarmbio Website',
+            subject: 'Richiesta di contatto - Sito Web LUMAFARMBIO.it',
             html: `<p>Nome: ${name}</p> <p>Email: ${email}</p> <p>Messaggio: ${message}</p>`,
         };
         sgMail.send(msg)
